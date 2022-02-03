@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // timer
 
-const deadline = '2022-02-08';
+const deadline = '2022-02-03';
 
 function getTime(endtime) {
     const kolvoMSec = Date.parse(endtime) - Date.parse(new Date()),
@@ -52,15 +52,15 @@ function getTime(endtime) {
         minutes = Math.floor((kolvoMSec / (1000 * 60) % 60)),
         seconds = Math.floor((kolvoMSec / (1000)) % 60);
 
-    if(kolvoMSec<=0){
-        return{
+    if (kolvoMSec <= 0) {
+        return {
             "kolvoMSec": 0,
             "days": 0,
             "hours": 0,
             "minutes": 0,
             "seconds": 0
-        }
-    }else{
+        };
+    } else {
         return {
             "kolvoMSec": kolvoMSec,
             "days": days,
@@ -70,13 +70,15 @@ function getTime(endtime) {
         };
     }
 }
-function addZero(num){
-    if(num < 10){
-        return "0"+num;
-    }else{
+
+function addZero(num) {
+    if (num < 10) {
+        return "0" + num;
+    } else {
         return num;
     }
 }
+
 function getElemOnPage(endtime) {
     const days = document.getElementById('days'),
         hours = document.getElementById("hours"),
@@ -84,13 +86,14 @@ function getElemOnPage(endtime) {
         seconds = document.getElementById('seconds'),
         timerId = setInterval(timer, 1000);
     timer();
+
     function timer() {
         const getTimeReturn = getTime(endtime);
         days.innerHTML = addZero(getTimeReturn.days);
         hours.innerHTML = addZero(getTimeReturn.hours);
         minutes.innerHTML = addZero(getTimeReturn.minutes);
         seconds.innerHTML = addZero(getTimeReturn.seconds);
-        if (getTimeReturn.kolvoMSec <=0){
+        if (getTimeReturn.kolvoMSec <= 0) {
             clearInterval(timerId);
         }
     }
