@@ -43,11 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // timer
 
-<<<<<<< HEAD
 const deadline = '2022-02-27';
-=======
-const deadline = '2022-02-03';
->>>>>>> 72b7bd8bfc6869304a768aa143aeab6260cf9406
 
 function getTime(endtime) {
     const kolvoMSec = Date.parse(endtime) - Date.parse(new Date()),
@@ -63,11 +59,8 @@ function getTime(endtime) {
             "hours": 0,
             "minutes": 0,
             "seconds": 0
-<<<<<<< HEAD
+
         }
-=======
-        };
->>>>>>> 72b7bd8bfc6869304a768aa143aeab6260cf9406
     } else {
         return {
             "kolvoMSec": kolvoMSec,
@@ -78,10 +71,7 @@ function getTime(endtime) {
         };
     }
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 72b7bd8bfc6869304a768aa143aeab6260cf9406
 function addZero(num) {
     if (num < 10) {
         return "0" + num;
